@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>空间</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/public.css">
+    <meta charset="UTF-8">
+    <title>空间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
 </head>
+
 <body>
-	<div class="content home">
+    <div class="content home">
+
         <div class="h-top">
-                <header class="clearfix">
-                    <a href="index.html" class="homePage fl"><img src="images/logo-w.png" alt="logo"></a>
-                    <a href="list.html" class="fr"><img src="images/menu.png" alt="菜单"></a>
-                </header>
-                <h2 class="t13">城市特色活动空间</h2>
-                <h2>共享平台</h2>
+            <img src="images/home-bg.jpg" alt="背景图">
+            <header class="clearfix">
+                <a href="index.html" class="homePage fl"><img src="images/logo-w.png" alt="logo"></a>
+                <a href="list.html" class="fr"><img src="images/menu.png" alt="菜单"></a>
+            </header>
+            <h2 class="t13">城市特色活动空间</h2>
+            <h2>共享平台</h2>
+            <div class="search clearfix">
+                <input type="text" class="fl" placeholder="想在哪里?">
+                <button class="fl"></button>
+            </div>
         </div>
-		
-		
-	</div>
+
+
+    </div>
 
 </body>
+
 </html>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
-	$(function(){
-		$('.title li').on('touchend',function(){
-			$(this).addClass('cur').siblings().removeClass('cur');
-			$(".item").hide().eq($('.title li').index(this)).show(); 
-			console.log($(this).index())
-		})
-	})
+    $(function() {
+        $('.title li').on('touchend', function() {
+            $(this).addClass('cur').siblings().removeClass('cur');
+            $(".item").hide().eq($('.title li').index(this)).show();
+            console.log($(this).index())
+        })
+    })
 </script>
