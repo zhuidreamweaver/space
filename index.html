@@ -13,15 +13,6 @@
     <div class="content home">
 
         <div class="h-top">
-<<<<<<< HEAD
-		<img src="images/home-bg.jpg" alt="背景图">
-                <header class="clearfix">
-                    <a href="index.html" class="homePage fl"><img src="images/logo-w.png" alt="logo"></a>
-                    <a href="list.html" class="fr"><img src="images/menu.png" alt="菜单"></a>
-                </header>
-                <h2 class="t13">城市特色活动空间</h2>
-                <h2>共享平台</h2>
-=======
             <img src="images/home-bg.jpg" alt="背景图">
             <header class="clearfix">
                 <a href="index.html" class="homePage fl"><img src="images/logo-w.png" alt="logo"></a>
@@ -31,12 +22,84 @@
             <h2>共享平台</h2>
             <div class="search clearfix">
                 <input type="text" class="fl" placeholder="想在哪里?">
-                <button class="fl"></button>
+                <button class="fl" id="search"></button>
             </div>
->>>>>>> 038e37dc09810fe574c06e2f91f42f6c2f5ca30d
+            <ul class="clearfix">
+                <li>
+                    <img src="images/jh.png" alt="聚会">
+                    <p>
+                        聚会
+                    </p>
+                </li>
+                <li>
+                    <img src="images/sl.png" alt="沙龙">
+                    <p>
+                        沙龙
+                    </p>
+                </li>
+                <li>
+                    <img src="images/hy.png" alt="会议">
+                    <p>
+                        会议
+                    </p>
+                </li>
+                <li>
+                    <img src="images/nh.png" alt="年会">
+                    <p>
+                        年会
+                    </p>
+                </li>
+                <li>
+                    <img src="images/ps.png" alt="拍摄">
+                    <p>
+                        拍摄
+                    </p>
+                </li>
+            </ul>
         </div>
-
-
+        <ul class="trait-list">
+            <li class="clearfix">
+                <img src="images/1.png" class="fl" alt="快速">
+                <div class="fl">
+                    <h3>Step : Find</h3>
+                    <p>选择所在区域</p>
+                    <p>快速找到合适你的活动空间</p>
+                </div>
+               
+            </li>
+            <li class="clearfix">
+                <img src="images/2.png" class="fl" alt="直连">
+                <div class="fl">
+                    <h3>Step : Touch</h3>
+                    <p>直接场地主</p>
+                    <p>直接洽谈提高效率</p>
+                </div>
+               
+            </li>
+            <li class="clearfix">
+                <img src="images/3.png" class="fl" alt="轻松">
+                <div class="fl">
+                    <h3>Step : Done</h3>
+                    <p>洽谈达成一致</p>
+                    <p>轻松举办线下活动</p>
+                </div>
+            </li>
+        </ul>
+        <footer class="h-footer">
+            <h2>友情链接</h2>
+            <span >
+                <a>友情链接</a>
+                <a>友情链接</a>
+                <a>友情链接</a>
+            </span>
+            <span>
+                <a>友情链接</a>
+                <a>友情链接</a>
+            </span>
+            <p>
+                MEET SPACE © Copyright 2017
+            </p>
+        </footer>
     </div>
 
 </body>
@@ -45,10 +108,8 @@
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
     $(function() {
-        $('.title li').on('touchend', function() {
-            $(this).addClass('cur').siblings().removeClass('cur');
-            $(".item").hide().eq($('.title li').index(this)).show();
-            console.log($(this).index())
-        })
+        $('#search').on('touchend', function() {
+            console.log($(this).siblings('input').val());
+        });
     })
 </script>

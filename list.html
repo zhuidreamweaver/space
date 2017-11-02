@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>场地列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+	<div class="content p-list">
+		<header class="clearfix">
+			<a href="index.html" class="homePage fl"><img src="images/logo-lr.png" alt="logo"></a>
+			<a href="javascript:switchSearch();" class="fr"><img src="images/menu-b.png" alt="菜单"></a>
+		</header>
+		<div class="searchBox show clearfix">
+			<div class="condition city">
+				<div class="searchTop clearfix">
+					<p>城市</p>
+					<img src="images/down.png" alt="展开">
+				</div>
+				<div class="list hide">
+					<p onclick="select(this)">北京</p>
+					<p onclick="select(this)">上海</p>
+					<p onclick="select(this)">郑州</p>
+				</div>
+			</div>
+			<div class="condition city">
+				<div class="searchTop clearfix">
+					<p>地区</p>
+					<img src="images/down.png" alt="地区">
+				</div>
+				<div class="list hide">
+						<p onclick="select(this)">东区</p>
+						<p onclick="select(this)">金水区</p>
+						<p onclick="select(this)">中原区</p>
+					</div>
+			</div>
+			<div class="condition city">
+				<div class="searchTop clearfix">
+					<p>类别</p>
+					<img src="images/down.png" alt="类别">
+				</div>
+				<div class="list hide">
+						<p onclick="select(this)">会议</p>
+						<p onclick="select(this)">聚会</p>
+						<p onclick="select(this)">年会</p>
+					</div>
+			</div>
+			<div class="condition city">
+				<div class="searchTop clearfix">
+					<p>人数</p>
+					<img src="images/down.png" alt="人数">
+				</div>
+				<div class="list hide">
+						<p onclick="select(this)">10</p>
+						<p onclick="select(this)">30</p>
+						<p onclick="select(this)">60</p>
+					</div>
+			</div>
+			<button class="seek">寻找</button>
+		</div>
+		<ul class="resultList">
+			<li class="clearfix">
+				<span class="fl">
+					<img src="images/list.jpg" alt="场地">
+					<img src="images/vr.png" class="watermark" alt="vr">
+				</span>
+				<div class="fl list-details">
+					<h3>瓦库</h3>
+					<h4>一个喝茶的地方</h4>
+					<p>
+						<b>设备: </b>
+						<img src="images/wifi.png" alt="wifi">
+						<img src="images/yx.png" alt="音响">
+						<img src="images/yy.png" alt="wifi">
+						<img src="images/tc.png" alt="停车">
+						<img src="images/cy.png" alt="餐饮">
+					</p>
+					<p class="clearfix">
+						<b class="fl">面积: 269(平)</b>
+						<b class="fr">容纳人数: 60(人)</b>
+					</p>
+					<p><b>地址: 郑州市众意路联盟新城30号</b></p>
+					<a href="javascript:;">点击查看地图></a>
+				</div>
+			</li>
+			<li class="clearfix">
+				<span class="fl">
+					<img src="images/list.jpg" alt="场地">
+					<img src="images/vr.png" class="watermark" alt="vr">
+				</span>
+				<div class="fl list-details">
+					<h3>瓦库</h3>
+					<h4>一个喝茶的地方</h4>
+					<p>
+						<b>设备: </b>
+						<img src="images/wifi.png" alt="wifi">
+						<img src="images/yx.png" alt="音响">
+						<img src="images/yy.png" alt="wifi">
+						<img src="images/tc.png" alt="停车">
+						<img src="images/cy.png" alt="餐饮">
+					</p>
+					<p class="clearfix">
+						<b class="fl">面积: 269(平)</b>
+						<b class="fr">容纳人数: 60(人)</b>
+					</p>
+					<p><b>地址: 郑州市众意路联盟新城30号</b></p>
+					<a href="javascript:;">点击查看地图></a>
+				</div>
+			</li>
+			<li class="clearfix">
+				<span class="fl">
+					<img src="images/list.jpg" alt="场地">
+					<img src="images/vr.png" class="watermark" alt="vr">
+				</span>
+				<div class="fl list-details">
+					<h3>瓦库</h3>
+					<h4>一个喝茶的地方</h4>
+					<p>
+						<b>设备: </b>
+						<img src="images/wifi.png" alt="wifi">
+						<img src="images/yx.png" alt="音响">
+						<img src="images/yy.png" alt="wifi">
+						<img src="images/tc.png" alt="停车">
+						<img src="images/cy.png" alt="餐饮">
+					</p>
+					<p class="clearfix">
+						<b class="fl">面积: 269(平)</b>
+						<b class="fr">容纳人数: 60(人)</b>
+					</p>
+					<p><b>地址: 郑州市众意路联盟新城30号</b></p>
+					<a href="javascript:;">点击查看地图></a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 展开搜索选项
+			$('.searchTop').on('touchend', function() {
+				var thisChild = $(this).siblings('.list');
+				if(thisChild.hasClass('show')){
+					thisChild.removeClass('show').addClass('hide');
+				}else{
+					thisChild.removeClass('hide').addClass('show');
+				}
+			});
+			// 查找
+			$('.seek').on('touchend', function() {
+				console.log($(this).siblings('.condition').children('.searchTop ').children('p').text());
+			});
+		});
+		// 搜索开关
+		function switchSearch(){
+			if($('.searchBox').hasClass('show')){
+				$('.searchBox').removeClass('show').addClass('hide');
+				$('.list').addClass('hide').removeClass('show');
+			}else{
+				$('.searchBox').removeClass('hide').addClass('show');
+			}
+		}
+		// 点击搜索选项
+		function select(self){
+			$(self).parent().siblings('.searchTop').children('p').html($(self).text());
+			$(self).parent().removeClass('show').addClass('hide');
+		}
+		
+	</script>
+</body>
+</html>
