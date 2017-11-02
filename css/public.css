@@ -35,8 +35,13 @@ p{
 .h-top{
     display: block;
     max-height: 600px;
-    background: #666;
-    
+    position: relative;
+}
+.h-top>img{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
 }
 .h-top>header>a.homePage{
     display: block;
