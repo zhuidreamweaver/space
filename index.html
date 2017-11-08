@@ -21,8 +21,13 @@
             <h2 class="t13">城市特色活动空间</h2>
             <h2>共享平台</h2>
             <div class="search clearfix">
-                <input type="text" class="fl" placeholder="想在哪里?">
+                <input type="text" onclick="searchBox(this)" class="fl" placeholder="想在哪里?">
                 <button class="fl" id="search"></button>
+                <div class="h-search-box hide">
+                    <p onclick="select(this)">北京</p>
+                     <p onclick="select(this)">上海</p> 
+                     <p onclick="select(this)">郑州</p>
+                </div>
             </div>
             <ul class="clearfix">
                 <li>
@@ -108,8 +113,24 @@
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
     $(function() {
+        // 搜索
         $('#search').on('touchend', function() {
             console.log($(this).siblings('input').val());
         });
-    })
+       
+    });
+     // 展开记录
+        function searchBox(self){
+            var selfBox = $(self).siblings('.h-search-box');
+                if(selfBox.hasClass('show')){
+                    selfBox.removeClass('show').addClass('hide');
+                }else{
+                    selfBox.removeClass('hide').addClass('show');
+                }
+        }
+    // 点击搜索选项
+        function select(self){
+            $(self).parent().siblings('input').val($(self).text());
+            $(self).parent().removeClass('show').addClass('hide');
+        }
 </script>
